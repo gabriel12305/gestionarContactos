@@ -18,7 +18,7 @@ public class Manager implements Serializable{
 
     public boolean crearUsuario(String contra){
         if(contra != null && data.containsKey(contra) == false){
-            data.put(contra, "data/"+contra+"_archivo"); 
+            data.put(contra, "src/main/java/ec/edu/espol/data/"+contra+"_archivo"); 
             try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(data.get(contra)))) {
                 ContactManager nuevoUsuario = new ContactManager(data.get(contra)); // Inicializar el ContactManager
                 oos.writeObject(nuevoUsuario); // Guardar en el archivo
