@@ -106,6 +106,20 @@ public class AssociatedContacts implements Serializable{
 
     @Override
     public String toString(){
-        return relation.isEmpty() ? "{}" : relation.toString();
+
+        StringBuffer sb = new StringBuffer();
+        sb.append("{");
+        if (relation.isEmpty()) {
+            return "{}";
+        }else{
+            for(Map.Entry<String, CircleLinkedList<Contact>> entry : relation.entrySet()){
+                for(Contact c: entry.getValue()){
+                    sb.append(" "+entry.getKey()+"="+ c.getName()+",");
+                }
+            }
+        }
+        String result = sb.toString().substring(0, sb.toString().length() -1);
+        result = result +" }";
+        return result;
     }
 }

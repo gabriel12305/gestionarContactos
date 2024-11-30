@@ -3,6 +3,8 @@ package ec.edu.espol.Implements;
 import java.util.Comparator;
 import java.util.Iterator;
 
+import org.w3c.dom.Node;
+
 public class CircleLinkedList<E> implements List<E> {
     private static final long serialVersionUID = 005L;
     DoublyCircularNode<E> header;
